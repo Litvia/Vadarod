@@ -17,7 +17,6 @@ public class DataType {
             int doubleToInt = (int) doub;
         System.out.println(doubleToInt);
 
-
             char c = 'X';//16 бит
             char ch = 65535;//16 бит
 
@@ -45,15 +44,11 @@ public class DataType {
         int octal = 0723615;
         int hexadecimal = 0x10Af23;
 
-
         int h,j,k;  // int по умолчанию равен 0
         int r = 3, e, p;  //способы объявления переменных
 
         boolean boola = true;
         boolean boolb = false;  //boolean по умолчанию равен false
         System.out.print(boolb);
-
-
-            //Дано уравнение x/6+25=98. Найти x и вывести его в консоль
         }
     }

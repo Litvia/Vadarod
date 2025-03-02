@@ -1,8 +1,8 @@
-package by.homework.lessons.lesson3;
+package by.homework.lessons.task4;
 
 import java.util.Scanner;
 
-public class task1 {
+public class task4_1 {
 //    Домашнее задание №4
 //    Задача 1. На вход даны 3 числа. Вывести в консоль только четные числа
     public static void main(String[] args) {

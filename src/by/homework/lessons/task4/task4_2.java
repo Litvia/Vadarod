@@ -1,7 +1,7 @@
-package by.homework.lessons.lesson3;
+package by.homework.lessons.task4;
 import java.util.Scanner;
 
-public class task2 {
+public class task4_2 {
 //    Домашнее задание №4
 //Задача 2. На вход даны 3 числа. Вывести в консоль только те числа, которые делятся на 2 и на 5 (используйте оператор % для проверки деления без остатка)
 //ввод чисел через консоль

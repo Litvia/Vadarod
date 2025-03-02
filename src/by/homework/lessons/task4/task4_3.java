@@ -1,8 +1,8 @@
-package by.homework.lessons.lesson3;
+package by.homework.lessons.task4;
 
 import java.util.Scanner;
 
-public class task3 {
+public class task4_3 {
 //    3. Дано 15/x=result, где x-число, которое вводится с командной строки, result-результат вычисления. Написать программу, которая будет выводит разный текст, в зависимости от значения result.
 //    В случае result=3, вывести: "Результат деления равен 3"
 //    В случае result=5, вывести: "Результат деления равен 5"

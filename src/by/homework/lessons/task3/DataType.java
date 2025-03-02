@@ -1,4 +1,4 @@
-package by.homework.lessons.lesson2;
+package by.homework.lessons.task3;
 
 public class DataType {
     public static void main(String[] args) {

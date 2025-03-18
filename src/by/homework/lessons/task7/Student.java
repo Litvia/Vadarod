@@ -13,6 +13,13 @@ public class Student {
 
     // Конструктор без параметров
     public Student() {
+        this.id = 0;
+        this.name = "";
+        this.surname = "";
+        this.faculty = "";
+        this.course = 0;
+        this.group = "";
+        this.averageMark = 0;
     }
 
     // Конструктор с параметрами
@@ -24,9 +31,6 @@ public class Student {
         this.course = course;
         this.group = group;
         this.averageMark = averageMark;
-    }
-
-   public Student(int id, String name, String surname, String faculty, int course, String group, int averageMark, Object o) {
     }
 
 //Задание 2. Создать метод, который будет выводить информацию по полям, которые есть в классе и назвать его info
@@ -45,22 +49,44 @@ public class Student {
 //Задание 3. Создать метод, который будет изменять текущую группу студента (сам метод в качестве параметра будет принимать новую группу)
 
     public void changeGroup(String newGroup) {
-    this.group = newGroup;
-}
+        this.group = newGroup;
+    }
 
 //Задание 4. Создать метод, который будет возвращать текущую группу студента.
 
     public String getCurrentGroup() {
         return group;
-}
+    }
 
 //Задание 5. Создать метод, который будет изменять оценку студента и группу студента одновременно.
 
-    public void changeMarkAndGroup(int newMark, String newGroup) {
-    this.averageMark = newMark;
-    this.group = newGroup;
+    public void updateMarkAndGroup(int newMark, String newGroup) {
+        this.averageMark = newMark;
+        this.group = newGroup;
+    }
 
+// Метод для фильтрации студентов по средней оценке
+
+    public Student[] getStudents(Student[] students, int mark) {
+        int count = 0;
+        for (Student student : students) {
+            if (student.averageMark > mark) {
+                count++;
+            }
+        }
+ // Создание нового массива для найденных подходящих студентов
+        Student[] result = new Student[count];
+        int index = 0;
+        for (Student student : students) {
+            if (student.averageMark > mark) {
+                result[index] = student;
+                index++;
+            }
+        }
+        return result;
+    }
+
+    private int averageMark() {
+        return 0;
+    }
 }
-}
-
-

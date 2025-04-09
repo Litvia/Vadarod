@@ -9,6 +9,10 @@ public class Main {
         Student s1 = new Student("Иван", "Иванов", LocalDate.of(1983, 12, 01), "Минск", 4.5);
         Student s2 = new Student("Петр", "Петров", LocalDate.of(1996, 03, 19), "Брест", 4.7);
         Student s3 = new Student("Артем", "Кулик", LocalDate.of(2005, 02, 22), "Гродно", 3.5);
+        Student s4 = new Student("Елена", "Чоп", LocalDate.of(2005, 02, 22), "Гродно", 0.0);
+        Student s5 = new Student("Артем", "Сидоров", LocalDate.of(2005, 02, 22), "Гродно", 4.0);
+        Student s6 = new Student("Анна", "Клоп", LocalDate.of(2005, 02, 22), "Гродно", 4.1);
+
 
         //Создание групп
         Group g1 = new Group(101);
@@ -19,25 +23,38 @@ public class Main {
         g1.addStudent(s1);
         g2.addStudent(s2);
         g3.addStudent(s3);
+        g1.addStudent(s4);
+        g2.addStudent(s5);
+        g3.addStudent(s6);
 
         //Создание факультета
-        Faculty f1 = new Faculty("Информатика 101");
-        Faculty f2 = new Faculty("Информатика 102");
-        Faculty f3 = new Faculty("Информатика 103");
+        Faculty itFaculty = new Faculty("Информатика");
 
-        // Распределение групп по факультетам
-        f1.addGroup(g1);
-        f2.addGroup(g2);
-        f3.addGroup(g3);
+        // Добавляем группы на факультет
+        itFaculty.addGroup(g1);
+        itFaculty.addGroup(g2);
+        itFaculty.addGroup(g3);
 
         // Удаляем студентов с низким средним баллом (мин 4 балла)
         g1.removeStudentsByMark(4.0);
         g2.removeStudentsByMark(4.0);
         g3.removeStudentsByMark(4.0);
 
-    }
+        // Переводим студентов, если их осталось менее двух
+        g1.transferToGroup(g3);
+        g2.transferToGroup(g3);
+        g3.transferToGroup(g2);
 
+        // Выводим средний балл по группе
+        System.out.println("Средний балл по группе 1: " + g1.calculateAverageMark());
+        System.out.println("Средний балл по группе 2: " + g2.calculateAverageMark());
+        System.out.println("Средний балл по группе 3: " + g3.calculateAverageMark());
+
+        // Меняем статус факультета
+        itFaculty.changeStatusOfActivityFaculty();
+    }
 }
+
 //Задачи
 //2. Создать класс студент (Student), группа (Group), факультет (Faculty).
 // У студента поля: имя, фамилия, дата рождения, город рождения, средний бал.

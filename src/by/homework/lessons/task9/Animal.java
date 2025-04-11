@@ -3,7 +3,7 @@ package by.homework.lessons.task9;
 //Поля в классе животное: окрас, максимальная продолжительность жизни, тип еды которой питаются (мясо, насекомые, растения).
 //Определить методы в классе животное: (издание звуков, животное играет)
 
-import java.util.Arrays;
+import java.util.Objects;
 
 public class Animal {
     protected String color;
@@ -31,5 +31,20 @@ public class Animal {
 
     public String toString() {
         return "окрас = " + color + ", максимальная продолжительность жизни = " + maxLifeSpan + ", тип еды = " + foodType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return maxLifeSpan == animal.maxLifeSpan
+                && Objects.equals(color, animal.color)
+                && Objects.equals(foodType, animal.foodType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, maxLifeSpan, foodType);
     }
 }

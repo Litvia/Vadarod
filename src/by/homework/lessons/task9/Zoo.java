@@ -7,7 +7,11 @@ public class Zoo {
     public void addAnimal(Animal animal) {
         Animal[] newAnimals = new Animal[animals == null ? 1 : animals.length + 1];
         if (animals != null) {
-            System.arraycopy(animals, 0, newAnimals, 0, animals.length);
+            int i = 0;
+            for (Animal animal1 : animals) {
+                newAnimals[i] = animal1;
+                i++;
+            }
         }
         newAnimals[newAnimals.length - 1] = animal;
         animals = newAnimals;
